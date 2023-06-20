@@ -75,3 +75,11 @@ class Item:
         Статический метод, возвращающий число из числа-строки.
         """
         return int(float(value))
+
+    def __add__(self, other):
+        """
+        Сложения экземпляров класса Phone и Item.
+        """
+        if isinstance(other, self.__class__):
+            return self.quantity + other.quantity
+        return 'Не экземпляр класса Item'
